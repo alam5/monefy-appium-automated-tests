@@ -34,8 +34,6 @@ Java
 **Why above case ?**
 These test cases were selected because adding income, adding expenses, and creating accounts are critical functionalities of the app. Ensuring these features work correctly is essential for maintaining the overall integrity of the application.
 
-Test Execution report is 
-
 
 
 
