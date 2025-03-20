@@ -19,6 +19,7 @@ Java
 -  **Update device.properties file:** Open the `device.properties` file and enter your device properties information.
 - **Run Appium:** Ensure that the Appium server installed and running. You can start it using the following command: `appium`
 - **Execute Tests:** Open the `test-execution.xml` file and run the project. You can do this from your IDE or using the command line.
+- Test result can also be seen the `MonefyTestresultReport.html` extent report in the project.
 
 **Below Smoke and Regression tests were selected for automation:**
 
@@ -32,6 +33,8 @@ Java
 
 **Why above case ?**
 These test cases were selected because adding income, adding expenses, and creating accounts are critical functionalities of the app. Ensuring these features work correctly is essential for maintaining the overall integrity of the application.
+
+Test Execution report is 
 
 
 
