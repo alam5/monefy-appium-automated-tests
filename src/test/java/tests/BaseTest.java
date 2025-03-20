@@ -4,11 +4,9 @@ import io.appium.java_client.AppiumDriver;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
-import pages.AccountsPage;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -63,7 +61,7 @@ public class BaseTest {
             throw new RuntimeException("Failed to initialize Appium driver");
 
         }
-         //   AccountsPage account = new AccountsPage(driver);
+         //   HomePage account = new HomePage(driver);
     }
 
 

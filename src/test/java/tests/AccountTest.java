@@ -2,19 +2,18 @@ package tests;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.AccountsPage;
-import pages.WizardPage;
+import pages.HomePage;
 
 import java.net.MalformedURLException;
 
 public class AccountTest extends BaseTest {
 
 
-    private AccountsPage account;
+    private HomePage account;
 
     @BeforeClass
     public void setUp() {
-        account = new AccountsPage(driver);
+        account = new HomePage(driver);
     }
 
     @Test(priority = 2)

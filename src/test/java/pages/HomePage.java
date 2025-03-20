@@ -2,29 +2,19 @@ package pages;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import java.time.Duration;
 
-import static pages.BasePage.wait_duration;
-
-
-public class AccountsPage    {
+public class HomePage {
 
     AppiumDriver<MobileElement> driver;
-        public AccountsPage(AppiumDriver<MobileElement> driver) {
+        public HomePage(AppiumDriver<MobileElement> driver) {
        //     super(driver);
             this.driver = driver;
     }
-
-
 
     private By addIncomeBtn = By.id("com.monefy.app.lite:id/income_button_title");
     private By amountText = By.id("com.monefy.app.lite:id/amount_text");
@@ -73,7 +63,6 @@ public class AccountsPage    {
         MobileElement Sdeposit = driver.findElement(depositTaost);
         wait.until(ExpectedConditions.visibilityOf(Sdeposit));
         Assert.assertTrue(Sdeposit.isDisplayed());
-
         Assert.assertEquals(Sdeposit.getText(),"Deposits: $500.00 added");
 
 
