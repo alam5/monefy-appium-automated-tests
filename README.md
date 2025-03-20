@@ -20,12 +20,12 @@ Java
 - **Run Appium:** Ensure that the Appium server installed and running. You can start it using the following command: `appium`
 - **Execute Tests:** Open the `test-execution.xml` file and run the project. You can do this from your IDE or using the command line.
 
-
-Below Smoke and Regression tests were selected to automated
+**Below Smoke and Regression tests were selected for automation:**
 
 **Smoke Test Cases:**
-1. Create and verify that income is added correctly.
-2. Create and verify that an expense is added correctly.
+1. Verify that income is added and saved.
+2. Verify that an expense is added and saved.
+   
 **Regression Test Cases:**
 1. Verify that adding a new account in the Monefy app functions as expected.
 2. Verify that an account can be deleted successfully.
