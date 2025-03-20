@@ -3,69 +3,70 @@ package pages;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 
-public class HomePage {
+
+public class HomePage extends BasePage {
 
     AppiumDriver<MobileElement> driver;
         public HomePage(AppiumDriver<MobileElement> driver) {
-       //     super(driver);
+            super(driver);
             this.driver = driver;
     }
 
-    private By addIncomeBtn = By.id("com.monefy.app.lite:id/income_button_title");
-    private By amountText = By.id("com.monefy.app.lite:id/amount_text");
-    private By selectCategoryBtn = By.id("com.monefy.app.lite:id/keyboard_action_button");
+    private By addIncomeBtn = By.id("income_button_title");
+    private By amountText = By.id("amount_text");
+    private By CategoryBtn = By.id("keyboard_action_button");
     private By selectDepositBtn = By.xpath("//android.widget.TextView[@resource-id=\"com.monefy.app.lite:id/textCategoryName\" and @text=\"Deposits\"]");
-    private By depositTaost = By.id(" com.monefy.app.lite:id/snackbar_text");
-  //  private By selectDepositBtn = By.id("com.monefy.app.lite:id/keyboard_action_button");
+    private By Taost = By.id("snackbar_text");
+    private By actionToast = By.id("snackbar_action");
+    private By num5 = By.id("buttonKeyboard5");
+    private By num0 = By.id("buttonKeyboard0");
+
+    private By expensebtn = By.id("expense_button");
+    private By expenscategry = By.xpath("//android.widget.TextView[@resource-id=\"com.monefy.app.lite:id/textCategoryName\" and @text=\"Bills\"]");
 
 
 
 
     public void clickIncomeBtn() {
-        MobileElement incomeBtn = driver.findElement(addIncomeBtn);
-        Assert.assertTrue(incomeBtn.isDisplayed());
-        Assert.assertEquals(incomeBtn.getText(),"INCOME");
-        incomeBtn.click();
+        clickElement(addIncomeBtn);
     }
-
-    private By num5 = By.id("com.monefy.app.lite:id/buttonKeyboard5");
-    private By num0 = By.id("com.monefy.app.lite:id/buttonKeyboard0");
 
     public void enterAmount(){
-        WebDriverWait wait=new WebDriverWait(driver,10);
-        MobileElement n5 = driver.findElement(num5);
-        wait.until(ExpectedConditions.visibilityOf(n5));
-        n5.click();
-        MobileElement n0 = driver.findElement(num0);
-        n0.click();
-        n0.click();
-
+        clickElement(num5);
+        clickElement(num0);
+        clickElement(num0);
     }
 
-    public void chooseCategory(){
-        MobileElement SelectCatgry = driver.findElement(selectCategoryBtn);
-        SelectCatgry.click();
+    public void clickCategory(){
+        clickElement(CategoryBtn);
     }
 
     public void selectDeposit(){
-        MobileElement Sdeposit = driver.findElement(selectDepositBtn);
-        Sdeposit.click();
+        clickElement(selectDepositBtn);
     }
-
 
     public void verifyBalance(){
-        WebDriverWait wait=new WebDriverWait(driver,20);
-        MobileElement Sdeposit = driver.findElement(depositTaost);
-        wait.until(ExpectedConditions.visibilityOf(Sdeposit));
-        Assert.assertTrue(Sdeposit.isDisplayed());
-        Assert.assertEquals(Sdeposit.getText(),"Deposits: $500.00 added");
-
-
+        verifyText(Taost,"Deposits: $500.00 added");
     }
+
+
+    public void clickExpenseBtn() {
+        clickElement(expensebtn);
+    }
+
+    public void chooseExpenseCategory(){
+        clickElement(expenscategry);
+    }
+
+    public void verifyExpense(){
+        verifyText(Taost,"Bills: $500.00 added");
+    }
+
+    public void cancelToast(){
+        clickElement(actionToast);
+    }
+
 
 }

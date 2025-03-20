@@ -34,7 +34,6 @@ public class BaseTest {
     public void androidSetup() throws MalformedURLException {
 
             try {
-
                 DesiredCapabilities caps = new DesiredCapabilities();
                 Properties prop = new Properties();
                 InputStream inputStream = new FileInputStream(projectPath+"/src/test/java//device.properties");
