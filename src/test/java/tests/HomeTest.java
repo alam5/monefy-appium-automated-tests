@@ -6,7 +6,7 @@ import pages.HomePage;
 
 import java.net.MalformedURLException;
 
-public class AccountTest extends BaseTest {
+public class HomeTest extends BaseTest {
 
 
     private HomePage account;

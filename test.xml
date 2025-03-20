@@ -2,7 +2,7 @@
     <test thread-count="2" name="Test">
         <classes>
             <class name="tests.WizardTest" />
-            <class name="tests.AccountTest" />
+            <class name="tests.HomeTest" />
         </classes>
     </test>
 </suite>
