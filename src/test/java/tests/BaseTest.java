@@ -20,7 +20,6 @@ public class BaseTest {
 
     protected static ExtentSparkReporter spark;
     protected static ExtentReports extent;
-    String projectPath = System.getProperty("user.dir");
 
     @BeforeSuite
     public void ReportSetup(){
@@ -30,15 +29,18 @@ public class BaseTest {
 
     }
 
+
+    String projpath = System.getProperty("user.dir");
+
     @BeforeTest
     public void androidSetup() throws MalformedURLException {
 
             try {
                 DesiredCapabilities caps = new DesiredCapabilities();
                 Properties prop = new Properties();
-                InputStream inputStream = new FileInputStream(projectPath+"/src/test/java//device.properties");
+                InputStream inputStream = new FileInputStream(projpath+"/src/test/java/device.properties");
                 prop.load(inputStream);
-               // String app = prop.getProperty("app");
+
                 caps.setCapability(MobileCapabilityType.PLATFORM_NAME, prop.getProperty("platformName"));
                 caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, prop.getProperty("platformVersion"));
                 caps.setCapability(MobileCapabilityType.DEVICE_NAME,prop.getProperty("deviceName"));
@@ -46,7 +48,7 @@ public class BaseTest {
                 caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
                 caps.setCapability("appActivity",prop.getProperty("appActivity"));
                 caps.setCapability("appPackage",prop.getProperty("appPackage"));
-                caps.setCapability("app",projectPath+"/src/test/resources/apps/monefy-1-18-0.apk");
+                caps.setCapability("app",projpath+"/src/test/resources/apps/monefy-1-18-0.apk");
                 caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
                 caps.setCapability(MobileCapabilityType.NO_RESET, true);
 
@@ -57,12 +59,11 @@ public class BaseTest {
 
             System.out.println("exception is "+e.getCause());
             System.out.println("message is "+e.getMessage());
-            throw new RuntimeException("Failed to initialize Appium driver");
+            throw new RuntimeException("Appium driver initialization failed");
 
         }
-         //   HomePage account = new HomePage(driver);
-    }
 
+    }
 
     @AfterTest
     public void tearDown() {
@@ -76,7 +77,6 @@ public class BaseTest {
     public void ReportTearDown(){
         extent.flush();
     }
-
 
 
 }

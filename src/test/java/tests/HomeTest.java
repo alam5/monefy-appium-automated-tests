@@ -10,7 +10,6 @@ import java.net.MalformedURLException;
 
 public class HomeTest extends BaseTest {
 
-
     private HomePage home;
 
     @BeforeClass
@@ -60,7 +59,7 @@ public class HomeTest extends BaseTest {
         test.log(Status.INFO, "Deposit category is selected");
 
         home.verifyExpense();
-        test.log(Status.INFO, "Success toast message is displayed");
+        test.log(Status.PASS, "Success toast message is displayed");
 
         home.cancelToast();
         test.log(Status.INFO, "Toast message is cancelled");
