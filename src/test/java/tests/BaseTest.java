@@ -29,7 +29,6 @@ public class BaseTest {
 
     }
 
-
     String projpath = System.getProperty("user.dir");
 
     @BeforeTest
@@ -60,9 +59,7 @@ public class BaseTest {
             System.out.println("exception is "+e.getCause());
             System.out.println("message is "+e.getMessage());
             throw new RuntimeException("Appium driver initialization failed");
-
-        }
-
+            }
     }
 
     @AfterTest

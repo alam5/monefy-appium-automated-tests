@@ -8,7 +8,6 @@ import org.openqa.selenium.By;
 
 public class HomePage extends BasePage {
 
-    AppiumDriver<MobileElement> driver;
         public HomePage(AppiumDriver<MobileElement> driver) {
             super(driver);
             this.driver = driver;
